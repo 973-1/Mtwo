@@ -6,5 +6,6 @@
 #include "EXTI_IRQHandler.h"
 
 void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
+extern uint8_t led_bre;
 
 #endif

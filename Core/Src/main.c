@@ -80,7 +80,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  led_init();
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -97,15 +97,50 @@ int main(void)
   MX_TIM3_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  uint8_t type = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {
-    /* USER CODE END WHILE */
+  { 
+    if (time_period > 1500)
+    {
+      type = 1;
+      time_period = 0;
+    }
+    else if (time_period > 0)
+    {
+      type = 2;
+      time_period = 0;
+    }
+    switch(type)
+    {
+      case 0:
+        break;
+      case 1:
+        led_bre = 0;
+        BEEP_ON();
+        HAL_Delay(200);
+        BEEP_OFF();
+        type = 3;
+        break;
+      case 2:
+        BEEP_ON();
+        HAL_Delay(200);
+        BEEP_OFF();
+        type = 4;
+        break;
+      case 3:
+        led_water();
+        break;
+      case 4:
+        led_bre = 1;
+        break;
+    }
 
+    /* USER CODE END WHILE */
+    
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

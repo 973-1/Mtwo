@@ -4,11 +4,12 @@
 uint16_t tim_count = 0;
 static uint8_t dir = 1;
 uint16_t time = 0;
+uint8_t led_bre = 0;
 
 void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if(htim->Instance == TIM2)
-    {   if(type_now == 2){
+    {   if(led_bre){
             if(dir == 1)
                 {
                     tim_count++;

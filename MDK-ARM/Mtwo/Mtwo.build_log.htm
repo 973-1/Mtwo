@@ -27,11 +27,15 @@ Project File Date:  08/12/2026
 <h2>Output:</h2>
 *** Using Compiler 'V6.18', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Mtwo'
-compiling beep.c...
+../Core/Src/main.c(107): warning: result of comparison of constant 1500 with expression of type 'uint8_t' (aka 'unsigned char') is always false [-Wtautological-constant-out-of-range-compare]
+    if (time_period > 1500)
+        ~~~~~~~~~~~ ^ ~~~~
+1 warning generated.
+compiling main.c...
 linking...
-Program Size: Code=15522 RO-data=458 RW-data=12 ZI-data=3660  
+Program Size: Code=16024 RO-data=456 RW-data=12 ZI-data=3660  
 FromELF: creating hex file...
-"Mtwo\Mtwo.axf" - 0 Error(s), 0 Warning(s).
+"Mtwo\Mtwo.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -49,7 +53,7 @@ Package Vendor: ARM
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

@@ -2,8 +2,6 @@
 
 void Beep_Init(void)
 {
-    BEEP_ON();
-    HAL_Delay(200);
     BEEP_OFF();
 }
 
