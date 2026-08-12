@@ -2,6 +2,7 @@
 "mtwo\startup_stm32f405xx.o"
 "mtwo\main.o"
 "mtwo\gpio.o"
+"mtwo\dma.o"
 "mtwo\tim.o"
 "mtwo\usart.o"
 "mtwo\stm32f4xx_it.o"

@@ -9,7 +9,7 @@ void Beep_Init(void)
 
 void Beep_Alarm(uint8_t times)
 {
-    if(uint8_t i = 0; i < times ; i++)
+    for(uint8_t i = 0; i < times ; i++)
     {
         BEEP_ON();
         HAL_Delay(times);
