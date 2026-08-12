@@ -3,6 +3,7 @@
 
 #include "main.h"
 #include "tim.h"
+#include "EXTI_IRQHandler.h"
 
 void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 
