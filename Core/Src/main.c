@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -92,6 +93,7 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM2_Init();
   MX_TIM3_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -101,26 +103,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    switch(type_now)
-    {
-      case 0:
-        break;
-      case 1:
-        HAL_Delay(1000);
-        led_water();
-        break;
-      case 2:
-        BEEP_ON();
-        break;
-      case 3:
-        BEEP_ON();
-        led_water();
-        break;
-      case 4:
-        type_now =2;
-        break;
 
-    }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
