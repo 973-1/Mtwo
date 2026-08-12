@@ -10,5 +10,6 @@
 
 void Beep_Init(void);
 void Beep_Alarm(uint8_t times);
+extern uint8_t BEEP_Trigger;
 
 #endif

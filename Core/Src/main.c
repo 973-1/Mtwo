@@ -29,6 +29,7 @@
 #include "beep.h"
 #include "TIM_IRQHandler.h"
 #include "EXTI_IRQHandler.h"
+#include "UART_IRQHandler.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -104,7 +105,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   { 
-    if (time_period > 1500)
+    /*if (time_period > 1500)
     {
       type = 1;
       time_period = 0;
@@ -137,11 +138,16 @@ int main(void)
       case 4:
         led_bre = 1;
         break;
-    }
+    }*/
 
     /* USER CODE END WHILE */
     
     /* USER CODE BEGIN 3 */
+    if (BEEP_Trigger != 0)
+    {
+      Beep_Alarm(BEEP_Trigger);
+      BEEP_Trigger = 0;
+    }
   }
   /* USER CODE END 3 */
 }
