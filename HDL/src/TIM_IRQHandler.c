@@ -1,7 +1,4 @@
 #include "TIM_IRQHandler.h"
-#include "tim.h"
-#include "stm32f4xx_hal.h"
-#include "main.h"
 
 uint16_t tim_count = 0;
 static uint8_t dir = 1;
@@ -26,7 +23,7 @@ void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         {
             dir = 1;
         }
-        _HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,tim_count);
-        _HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,tim_count);
+        __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,tim_count);
+        __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,tim_count);
     }
 }

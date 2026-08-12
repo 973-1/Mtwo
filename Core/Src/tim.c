@@ -63,7 +63,7 @@ void MX_TIM2_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN TIM2_Init 2 */
-  if(HAL_TIM_Basd_Start_IT(&htim2) != HAL_OK)
+  if(HAL_TIM_Base_Start_IT(&htim2) != HAL_OK)
   {
     Error_Handler();
   }

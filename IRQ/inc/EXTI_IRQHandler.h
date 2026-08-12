@@ -5,6 +5,6 @@
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
 
-extern uint8_t BEEP_Trigger;
+extern uint8_t type_now;
 
 #endif

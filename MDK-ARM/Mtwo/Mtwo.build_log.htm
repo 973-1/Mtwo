@@ -26,109 +26,12 @@ Project File Date:  08/12/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.18', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Mtwo'
-compiling gpio.c...
-compiling main.c...
-compiling stm32f4xx_it.c...
-compiling stm32f4xx_hal_timebase_tim.c...
-../Core/Src/tim.c(65): warning: implicit declaration of function 'HAL_TIM_Basd_Start_IT' is invalid in C99 [-Wimplicit-function-declaration]
-  if(HAL_TIM_Basd_Start_IT(&htim2) != HAL_OK)
-     ^
-1 warning generated.
-compiling tim.c...
-compiling stm32f4xx_hal_msp.c...
-compiling stm32f4xx_hal_rcc.c...
-compiling stm32f4xx_hal_rcc_ex.c...
-compiling stm32f4xx_hal_flash.c...
-compiling stm32f4xx_hal_tim_ex.c...
-compiling stm32f4xx_hal_tim.c...
-assembling startup_stm32f405xx.s...
-compiling stm32f4xx_hal_gpio.c...
-compiling stm32f4xx_hal_flash_ramfunc.c...
-compiling stm32f4xx_hal_flash_ex.c...
-compiling stm32f4xx_hal_dma_ex.c...
-compiling stm32f4xx_hal_dma.c...
-compiling stm32f4xx_hal_pwr.c...
-compiling stm32f4xx_hal_pwr_ex.c...
-compiling stm32f4xx_hal_cortex.c...
-compiling stm32f4xx_hal_exti.c...
-compiling stm32f4xx_hal.c...
-compiling system_stm32f4xx.c...
-compiling beep.c...
-../HDL/src/led.c(9): error: use of undeclared identifier 'LED_0_GPIO_Port'
-LED_OFF(0);
-^
-../HDL/inc\led.h(10): note: expanded from macro 'LED_OFF'
-#define LED_OFF(x) HAL_GPIO_WritePin(LED_##x##_GPIO_Port, LED_##x##_Pin, GPIO_PIN_RESET)
-                                     ^
-<scratch space>(3): note: expanded from here
-LED_0_GPIO_Port
-^
-../HDL/src/led.c(9): error: use of undeclared identifier 'LED_0_Pin'
-../HDL/inc\led.h(10): note: expanded from macro 'LED_OFF'
-#define LED_OFF(x) HAL_GPIO_WritePin(LED_##x##_GPIO_Port, LED_##x##_Pin, GPIO_PIN_RESET)
-                                                          ^
-<scratch space>(5): note: expanded from here
-LED_0_Pin
-^
-../HDL/src/led.c(23): error: use of undeclared identifier 'LED_0_GPIO_Port'
-LED_ON(0);
-^
-../HDL/inc\led.h(9): note: expanded from macro 'LED_ON'
-#define LED_ON(x) HAL_GPIO_WritePin(LED_##x##_GPIO_Port, LED_##x##_Pin, GPIO_PIN_SET)
-                                    ^
-<scratch space>(19): note: expanded from here
-LED_0_GPIO_Port
-^
-../HDL/src/led.c(23): error: use of undeclared identifier 'LED_0_Pin'
-../HDL/inc\led.h(9): note: expanded from macro 'LED_ON'
-#define LED_ON(x) HAL_GPIO_WritePin(LED_##x##_GPIO_Port, LED_##x##_Pin, GPIO_PIN_SET)
-                                                         ^
-<scratch space>(21): note: expanded from here
-LED_0_Pin
-^
-../HDL/src/led.c(25): error: use of undeclared identifier 'LED_0_GPIO_Port'
-LED_OFF(0);
-^
-../HDL/inc\led.h(10): note: expanded from macro 'LED_OFF'
-#define LED_OFF(x) HAL_GPIO_WritePin(LED_##x##_GPIO_Port, LED_##x##_Pin, GPIO_PIN_RESET)
-                                     ^
-<scratch space>(23): note: expanded from here
-LED_0_GPIO_Port
-^
-../HDL/src/led.c(25): error: use of undeclared identifier 'LED_0_Pin'
-../HDL/inc\led.h(10): note: expanded from macro 'LED_OFF'
-#define LED_OFF(x) HAL_GPIO_WritePin(LED_##x##_GPIO_Port, LED_##x##_Pin, GPIO_PIN_RESET)
-                                                          ^
-<scratch space>(25): note: expanded from here
-LED_0_Pin
-^
-6 errors generated.
+Build target 'Mtwo'
 compiling led.c...
-../HDL/src/TIM_IRQHandler.c(1): warning: In file included from...
-../HDL/inc\TIM_IRQHandler.h(4): error: unknown type name 'TIM_HandleTypeDef'
-void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
-                               ^
-../HDL/src/TIM_IRQHandler.c(29): warning: implicit declaration of function '_HAL_TIM_SET_COMPARE' is invalid in C99 [-Wimplicit-function-declaration]
-        _HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,tim_count);
-        ^
-../HDL/src/TIM_IRQHandler.c(29): error: use of undeclared identifier 'htim3'
-        _HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,tim_count);
-                              ^
-../HDL/src/TIM_IRQHandler.c(30): error: use of undeclared identifier 'htim3'
-        _HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,tim_count);
-                              ^
-1 warning and 3 errors generated.
-compiling TIM_IRQHandler.c...
-../IRQ/src/EXTI_IRQHandler.c(3): error: redefinition of 'BEEP_Trigger' with a different type: 'volatile uint8_t' (aka 'volatile unsigned char') vs 'uint8_t' (aka 'unsigned char')
-volatile uint8_t BEEP_Trigger = 0;
-                 ^
-../IRQ/inc\EXTI_IRQHandler.h(8): note: previous declaration is here
-extern uint8_t BEEP_Trigger;
-               ^
-1 error generated.
-compiling EXTI_IRQHandler.c...
-"Mtwo\Mtwo.axf" - 10 Error(s), 2 Warning(s).
+linking...
+Program Size: Code=10734 RO-data=450 RW-data=12 ZI-data=3396  
+FromELF: creating hex file...
+"Mtwo\Mtwo.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -146,8 +49,7 @@ Package Vendor: ARM
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Target not created.
-Build Time Elapsed:  00:00:09
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

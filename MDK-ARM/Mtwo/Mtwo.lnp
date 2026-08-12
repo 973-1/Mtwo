@@ -2,6 +2,7 @@
 "mtwo\startup_stm32f405xx.o"
 "mtwo\main.o"
 "mtwo\gpio.o"
+"mtwo\tim.o"
 "mtwo\stm32f4xx_it.o"
 "mtwo\stm32f4xx_hal_msp.o"
 "mtwo\stm32f4xx_hal_timebase_tim.o"
@@ -21,6 +22,10 @@
 "mtwo\stm32f4xx_hal.o"
 "mtwo\stm32f4xx_hal_exti.o"
 "mtwo\system_stm32f4xx.o"
+"mtwo\beep.o"
+"mtwo\led.o"
+"mtwo\tim_irqhandler.o"
+"mtwo\exti_irqhandler.o"
 --strict --scatter "Mtwo\Mtwo.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
