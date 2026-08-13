@@ -6,4 +6,6 @@
 #include "can.h"
 #include "beep.h"
 
+extern uint8_t TxLed;
+
 #endif

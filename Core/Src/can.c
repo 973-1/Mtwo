@@ -70,6 +70,22 @@ void MX_CAN1_Init(void)
     Error_Handler();
   }
 
+  CAN_FilterConfig.FilterActivation = ENABLE;
+  CAN_FilterConfig.SlaveStartFilterBank = 14;
+  CAN_FilterConfig.FilterBank = 0;
+  CAN_FilterConfig.FilterScale = CAN_FILTERSCALE_32BIT;
+  CAN_FilterConfig.FilterMode = CAN_FILTERMODE_IDLIST;
+  CAN_FilterConfig.FilterFIFOAssignment = CAN_FILTER_FIFO0;
+  CAN_FilterConfig.FilterIdHigh = ((0x01020101 << 3) | 4 )>>16;
+  CAN_FilterConfig.FilterMaskIdHigh = ((0x01020201 << 3) | 4 )>>16;
+  CAN_FilterConfig.FilterIdLow = ((0x01020101 << 3) | 4) & 0xFFFF;
+  CAN_FilterConfig.FilterMaskIdLow =((0x01020201 << 3) | 4) & 0xFFFF;
+  if (HAL_CAN_ConfigFilter(&hcan1, &CAN_FilterConfig) != HAL_OK){
+    Error_Handler();
+  }
+
+  
+
   if (HAL_CAN_Start(&hcan1) != HAL_OK)
   Error_Handler();
   if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK){

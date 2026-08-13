@@ -31,6 +31,7 @@
 #include "TIM_IRQHandler.h"
 #include "EXTI_IRQHandler.h"
 #include "UART_IRQHandler.h"
+#include "CAN_IRQHandler.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,7 +102,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_CAN1_Init();
   /* USER CODE BEGIN 2 */
-  uint8_t type = 0;
+  //uint8_t type = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -150,6 +151,22 @@ int main(void)
     {
       Beep_Alarm(BEEP_Trigger);
       BEEP_Trigger = 0;
+
+      CAN_TxHeaderTypeDef TxHeader_1;
+      uint32_t TxMailbox_1;
+      uint8_t TxData_1[2] = {'O','K'};
+
+      TxHeader_1.StdId = 0;
+      TxHeader_1.ExtId = 0x02010101;
+      TxHeader_1.IDE = CAN_ID_STD;//CAN_ID_EXT
+      TxHeader_1.DLC = 2;
+      TxHeader_1.TransmitGlobalTime = DISABLE;
+
+      HAL_CAN_AddTxMessage(&hcan1, &TxHeader_1, TxData_1, &TxMailbox_1);
+    }
+    if (TxLed)
+    {
+      led_water();
     }
   }
   /* USER CODE END 3 */
