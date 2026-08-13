@@ -1,6 +1,6 @@
 #include "UART_IRQHandler.h"
 
-uint8_t rx_buffer[100] = [0];
+uint8_t rx_buffer[5] = {0};
 
 void UART_Start_Receive(void)
 {
@@ -16,7 +16,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
  {
     if (rx_buffer[5] == 0XFF)
     {
-        for(uint8_t i = 0, i < 5, i++)
+        for(uint8_t i = 0; i < 5; i++)
         {
             if(rx_buffer[i] == 1)
             {
@@ -28,9 +28,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
  }
 }
 
-void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef*huart, uint16_t size)
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef*huart, uint16_t Size)
 {
-    if (huart->Instance == USART)
+    if (huart->Instance == USART1)
     {
         if(rx_buffer[0] == 0xAA)
         {
@@ -43,6 +43,6 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef*huart, uint16_t size)
             }
             HAL_UART_Transmit(&huart1,rx_buffer,Size, 100);
         }
-        HAL_UARTEx_ReceiveToIdle_DMA(&huart1, rx_buffeer,sizeof(rx_buffer));
+        HAL_UARTEx_ReceiveToIdle_DMA(&huart1, rx_buffer,sizeof(rx_buffer));
     }
 }
