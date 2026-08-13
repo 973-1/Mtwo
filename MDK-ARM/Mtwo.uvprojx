@@ -859,11 +859,6 @@
               <FileType>1</FileType>
               <FilePath>..\HDL\src\led.c</FilePath>
             </File>
-            <File>
-              <FileName>TIM_IRQHandler.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HDL\src\TIM_IRQHandler.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -883,6 +878,11 @@
               <FileName>CAN_IRQHandler.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\IRQ\src\CAN_IRQHandler.c</FilePath>
+            </File>
+            <File>
+              <FileName>TIM_IRQHandler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\IRQ\src\TIM_IRQHandler.c</FilePath>
             </File>
           </Files>
         </Group>

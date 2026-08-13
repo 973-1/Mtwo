@@ -32,6 +32,6 @@ mtwo/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   ..\Core\Inc\can.h ..\Core\Inc\dma.h ..\Core\Inc\tim.h \
   ..\Core\Inc\usart.h ..\Core\Inc\gpio.h ..\HDL\inc\led.h \
-  ..\HDL\inc\beep.h ..\HDL\inc\TIM_IRQHandler.h \
+  ..\HDL\inc\beep.h ..\IRQ\inc\TIM_IRQHandler.h \
   ..\IRQ\inc\EXTI_IRQHandler.h ..\IRQ\inc\UART_IRQHandler.h \
   ..\IRQ\inc\CAN_IRQHandler.h

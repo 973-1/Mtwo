@@ -1017,11 +1017,6 @@ Section Cross References
     led.o(.text.led_water) refers to stm32f4xx_hal_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     led.o(.text.led_water) refers to stm32f4xx_hal.o(.text.HAL_Delay) for HAL_Delay
     led.o(.ARM.exidx.text.led_water) refers to led.o(.text.led_water) for [Anonymous Symbol]
-    tim_irqhandler.o(.text.TIM_PeriodElapsedCallback) refers to tim_irqhandler.o(.bss.led_bre) for led_bre
-    tim_irqhandler.o(.text.TIM_PeriodElapsedCallback) refers to tim_irqhandler.o(.data.dir) for dir
-    tim_irqhandler.o(.text.TIM_PeriodElapsedCallback) refers to tim_irqhandler.o(.bss.tim_count) for tim_count
-    tim_irqhandler.o(.text.TIM_PeriodElapsedCallback) refers to tim.o(.bss.htim3) for htim3
-    tim_irqhandler.o(.ARM.exidx.text.TIM_PeriodElapsedCallback) refers to tim_irqhandler.o(.text.TIM_PeriodElapsedCallback) for [Anonymous Symbol]
     exti_irqhandler.o(.text.HAL_GPIO_EXTI_Callback) refers to stm32f4xx_hal.o(.text.HAL_GetTick) for HAL_GetTick
     exti_irqhandler.o(.text.HAL_GPIO_EXTI_Callback) refers to exti_irqhandler.o(.bss.time_now) for time_now
     exti_irqhandler.o(.text.HAL_GPIO_EXTI_Callback) refers to exti_irqhandler.o(.bss.num) for num
@@ -1049,6 +1044,11 @@ Section Cross References
     can_irqhandler.o(.text.HAL_RxFifo0MsgPendingCallback) refers to can.o(.bss.hcan1) for hcan1
     can_irqhandler.o(.text.HAL_RxFifo0MsgPendingCallback) refers to stm32f4xx_hal_can.o(.text.HAL_CAN_AddTxMessage) for HAL_CAN_AddTxMessage
     can_irqhandler.o(.ARM.exidx.text.HAL_RxFifo0MsgPendingCallback) refers to can_irqhandler.o(.text.HAL_RxFifo0MsgPendingCallback) for [Anonymous Symbol]
+    tim_irqhandler.o(.text.TIM_PeriodElapsedCallback) refers to tim_irqhandler.o(.bss.led_bre) for led_bre
+    tim_irqhandler.o(.text.TIM_PeriodElapsedCallback) refers to tim_irqhandler.o(.data.dir) for dir
+    tim_irqhandler.o(.text.TIM_PeriodElapsedCallback) refers to tim_irqhandler.o(.bss.tim_count) for tim_count
+    tim_irqhandler.o(.text.TIM_PeriodElapsedCallback) refers to tim.o(.bss.htim3) for htim3
+    tim_irqhandler.o(.ARM.exidx.text.TIM_PeriodElapsedCallback) refers to tim_irqhandler.o(.text.TIM_PeriodElapsedCallback) for [Anonymous Symbol]
     __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
@@ -2021,13 +2021,6 @@ Removing Unused input sections from the image.
     Removing led.o(.text), (0 bytes).
     Removing led.o(.ARM.exidx.text.led_init), (8 bytes).
     Removing led.o(.ARM.exidx.text.led_water), (8 bytes).
-    Removing tim_irqhandler.o(.text), (0 bytes).
-    Removing tim_irqhandler.o(.text.TIM_PeriodElapsedCallback), (178 bytes).
-    Removing tim_irqhandler.o(.ARM.exidx.text.TIM_PeriodElapsedCallback), (8 bytes).
-    Removing tim_irqhandler.o(.bss.tim_count), (2 bytes).
-    Removing tim_irqhandler.o(.bss.time), (2 bytes).
-    Removing tim_irqhandler.o(.bss.led_bre), (1 bytes).
-    Removing tim_irqhandler.o(.data.dir), (1 bytes).
     Removing exti_irqhandler.o(.text), (0 bytes).
     Removing exti_irqhandler.o(.ARM.exidx.text.HAL_GPIO_EXTI_Callback), (8 bytes).
     Removing uart_irqhandler.o(.text), (0 bytes).
@@ -2039,6 +2032,13 @@ Removing Unused input sections from the image.
     Removing can_irqhandler.o(.ARM.exidx.text.HAL_RxFifo0MsgPendingCallback), (8 bytes).
     Removing can_irqhandler.o(.bss.RxHeader), (28 bytes).
     Removing can_irqhandler.o(.bss.RxData), (1 bytes).
+    Removing tim_irqhandler.o(.text), (0 bytes).
+    Removing tim_irqhandler.o(.text.TIM_PeriodElapsedCallback), (178 bytes).
+    Removing tim_irqhandler.o(.ARM.exidx.text.TIM_PeriodElapsedCallback), (8 bytes).
+    Removing tim_irqhandler.o(.bss.tim_count), (2 bytes).
+    Removing tim_irqhandler.o(.bss.time), (2 bytes).
+    Removing tim_irqhandler.o(.bss.led_bre), (1 bytes).
+    Removing tim_irqhandler.o(.data.dir), (1 bytes).
 
 872 unused section(s) (total 62419 bytes) removed from the image.
 
@@ -2812,7 +2812,7 @@ Memory Map of the image
     0x080017be   0x080017be   0x00000002   PAD
     0x080017c0   0x080017c0   0x00000042   Code   RO          940    .text.HAL_Delay     stm32f4xx_hal.o
     0x08001802   0x08001802   0x00000002   PAD
-    0x08001804   0x08001804   0x00000070   Code   RO         1189    .text.HAL_GPIO_EXTI_Callback  exti_irqhandler.o
+    0x08001804   0x08001804   0x00000070   Code   RO         1177    .text.HAL_GPIO_EXTI_Callback  exti_irqhandler.o
     0x08001874   0x08001874   0x00000038   Code   RO          719    .text.HAL_GPIO_EXTI_IRQHandler  stm32f4xx_hal_gpio.o
     0x080018ac   0x080018ac   0x000003b6   Code   RO          707    .text.HAL_GPIO_Init  stm32f4xx_hal_gpio.o
     0x08001c62   0x08001c62   0x00000002   PAD
@@ -2867,7 +2867,7 @@ Memory Map of the image
     0x08003448   0x08003448   0x00000020   Code   RO           17    .text.HAL_TIM_PeriodElapsedCallback  main.o
     0x08003468   0x08003468   0x00000008   Code   RO          300    .text.HAL_TIM_TriggerCallback  stm32f4xx_hal_tim.o
     0x08003470   0x08003470   0x000000b8   Code   RO         1063    .text.HAL_UARTEx_ReceiveToIdle_DMA  stm32f4xx_hal_uart.o
-    0x08003528   0x08003528   0x000000ac   Code   RO         1204    .text.HAL_UARTEx_RxEventCallback  uart_irqhandler.o
+    0x08003528   0x08003528   0x000000ac   Code   RO         1192    .text.HAL_UARTEx_RxEventCallback  uart_irqhandler.o
     0x080035d4   0x080035d4   0x00000008   Code   RO         1099    .text.HAL_UART_ErrorCallback  stm32f4xx_hal_uart.o
     0x080035dc   0x080035dc   0x0000045c   Code   RO         1093    .text.HAL_UART_IRQHandler  stm32f4xx_hal_uart.o
     0x08003a38   0x08003a38   0x0000009e   Code   RO         1009    .text.HAL_UART_Init  stm32f4xx_hal_uart.o
@@ -2875,7 +2875,7 @@ Memory Map of the image
     0x08003ad8   0x08003ad8   0x00000180   Code   RO           79    .text.HAL_UART_MspInit  usart.o
     0x08003c58   0x08003c58   0x00000056   Code   RO         1033    .text.HAL_UART_Receive_IT  stm32f4xx_hal_uart.o
     0x08003cae   0x08003cae   0x00000002   PAD
-    0x08003cb0   0x08003cb0   0x0000007c   Code   RO         1202    .text.HAL_UART_RxCpltCallback  uart_irqhandler.o
+    0x08003cb0   0x08003cb0   0x0000007c   Code   RO         1190    .text.HAL_UART_RxCpltCallback  uart_irqhandler.o
     0x08003d2c   0x08003d2c   0x00000008   Code   RO         1113    .text.HAL_UART_RxHalfCpltCallback  stm32f4xx_hal_uart.o
     0x08003d34   0x08003d34   0x00000130   Code   RO         1025    .text.HAL_UART_Transmit  stm32f4xx_hal_uart.o
     0x08003e64   0x08003e64   0x00000008   Code   RO         1107    .text.HAL_UART_TxCpltCallback  stm32f4xx_hal_uart.o
@@ -2930,7 +2930,7 @@ Memory Map of the image
     0x08004d10   0x08004d10   0x00000168   Code   RO         1095    .text.UART_Receive_IT  stm32f4xx_hal_uart.o
     0x08004e78   0x08004e78   0x0000013a   Code   RO         1013    .text.UART_SetConfig  stm32f4xx_hal_uart.o
     0x08004fb2   0x08004fb2   0x00000002   PAD
-    0x08004fb4   0x08004fb4   0x0000001a   Code   RO         1200    .text.UART_Start_Receive  uart_irqhandler.o
+    0x08004fb4   0x08004fb4   0x0000001a   Code   RO         1188    .text.UART_Start_Receive  uart_irqhandler.o
     0x08004fce   0x08004fce   0x00000002   PAD
     0x08004fd0   0x08004fd0   0x00000130   Code   RO         1047    .text.UART_Start_Receive_DMA  stm32f4xx_hal_uart.o
     0x08005100   0x08005100   0x00000062   Code   RO         1035    .text.UART_Start_Receive_IT  stm32f4xx_hal_uart.o
@@ -2967,7 +2967,7 @@ Memory Map of the image
     0x2000000c   0x0800552c   0x00000004   PAD
     0x20000010        -       0x00000060   Zero   RW         1271    .bss                c_w.l(libspace.o)
     0x20000070        -       0x00000001   Zero   RW         1158    .bss.BEEP_Trigger   beep.o
-    0x20000071        -       0x00000001   Zero   RW         1216    .bss.TxLed          can_irqhandler.o
+    0x20000071        -       0x00000001   Zero   RW         1204    .bss.TxLed          can_irqhandler.o
     0x20000072   0x0800552c   0x00000002   PAD
     0x20000074        -       0x00000028   Zero   RW           42    .bss.hcan1          can.o
     0x2000009c        -       0x00000060   Zero   RW           84    .bss.hdma_usart1_rx  usart.o
@@ -2976,10 +2976,10 @@ Memory Map of the image
     0x200001a4        -       0x00000048   Zero   RW           68    .bss.htim2          tim.o
     0x200001ec        -       0x00000048   Zero   RW           69    .bss.htim3          tim.o
     0x20000234        -       0x00000048   Zero   RW           83    .bss.huart1         usart.o
-    0x2000027c        -       0x00000001   Zero   RW         1193    .bss.num            exti_irqhandler.o
-    0x2000027d        -       0x00000005   Zero   RW         1206    .bss.rx_buffer      uart_irqhandler.o
-    0x20000282        -       0x00000001   Zero   RW         1191    .bss.time_now       exti_irqhandler.o
-    0x20000283        -       0x00000001   Zero   RW         1192    .bss.time_period    exti_irqhandler.o
+    0x2000027c        -       0x00000001   Zero   RW         1181    .bss.num            exti_irqhandler.o
+    0x2000027d        -       0x00000005   Zero   RW         1194    .bss.rx_buffer      uart_irqhandler.o
+    0x20000282        -       0x00000001   Zero   RW         1179    .bss.time_now       exti_irqhandler.o
+    0x20000283        -       0x00000001   Zero   RW         1180    .bss.time_period    exti_irqhandler.o
     0x20000284        -       0x00000004   Zero   RW          976    .bss.uwTick         stm32f4xx_hal.o
     0x20000288        -       0x00000800   Zero   RW            2    HEAP                startup_stm32f405xx.o
     0x20000a88        -       0x00000400   Zero   RW            1    STACK               startup_stm32f405xx.o

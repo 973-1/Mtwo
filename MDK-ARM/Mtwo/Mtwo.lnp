@@ -29,10 +29,10 @@
 "mtwo\system_stm32f4xx.o"
 "mtwo\beep.o"
 "mtwo\led.o"
-"mtwo\tim_irqhandler.o"
 "mtwo\exti_irqhandler.o"
 "mtwo\uart_irqhandler.o"
 "mtwo\can_irqhandler.o"
+"mtwo\tim_irqhandler.o"
 --strict --scatter "Mtwo\Mtwo.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

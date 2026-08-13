@@ -2,7 +2,7 @@
 
 CAN_RxHeaderTypeDef RxHeader;
 uint8_t RxData[1];
-extern uint8_t TxLed = 0;
+uint8_t TxLed = 0;
 
 void HAL_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
