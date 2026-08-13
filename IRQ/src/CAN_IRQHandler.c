@@ -38,7 +38,7 @@ void HAL_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 
                 TxHeader_2.StdId = 0;
                 TxHeader_2.ExtId = 0x02010201;
-                TxHeader_2.IDE = CAN_ID_STD;//CAN_ID_EXT
+                TxHeader_2.IDE = CAN_ID_EXT;
                 TxHeader_2.DLC = 3;
                 TxHeader_2.TransmitGlobalTime = DISABLE;
 

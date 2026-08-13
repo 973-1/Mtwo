@@ -2028,7 +2028,7 @@ Removing Unused input sections from the image.
     Removing uart_irqhandler.o(.ARM.exidx.text.HAL_UART_RxCpltCallback), (8 bytes).
     Removing uart_irqhandler.o(.ARM.exidx.text.HAL_UARTEx_RxEventCallback), (8 bytes).
     Removing can_irqhandler.o(.text), (0 bytes).
-    Removing can_irqhandler.o(.text.HAL_RxFifo0MsgPendingCallback), (296 bytes).
+    Removing can_irqhandler.o(.text.HAL_RxFifo0MsgPendingCallback), (298 bytes).
     Removing can_irqhandler.o(.ARM.exidx.text.HAL_RxFifo0MsgPendingCallback), (8 bytes).
     Removing can_irqhandler.o(.bss.RxHeader), (28 bytes).
     Removing can_irqhandler.o(.bss.RxData), (1 bytes).
@@ -2040,7 +2040,7 @@ Removing Unused input sections from the image.
     Removing tim_irqhandler.o(.bss.led_bre), (1 bytes).
     Removing tim_irqhandler.o(.data.dir), (1 bytes).
 
-872 unused section(s) (total 62419 bytes) removed from the image.
+872 unused section(s) (total 62421 bytes) removed from the image.
 
 ==============================================================================
 
@@ -2362,10 +2362,10 @@ Image Symbol Table
     [Anonymous Symbol]                       0x080053a8   Section        0  led.o(.text.led_init)
     [Anonymous Symbol]                       0x080053cc   Section        0  led.o(.text.led_water)
     [Anonymous Symbol]                       0x08005424   Section        0  main.o(.text.main)
-    $v0                                      0x080054c4   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x080054c4   Section       26  fpinit.o(x$fpl$fpinit)
-    DMA_CalcBaseAndBitshift.flagBitshiftOffset 0x080054f6   Data           8  stm32f4xx_hal_dma.o(.rodata.DMA_CalcBaseAndBitshift.flagBitshiftOffset)
-    [Anonymous Symbol]                       0x080054f6   Section        0  stm32f4xx_hal_dma.o(.rodata.DMA_CalcBaseAndBitshift.flagBitshiftOffset)
+    $v0                                      0x080054c6   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x080054c6   Section       26  fpinit.o(x$fpl$fpinit)
+    DMA_CalcBaseAndBitshift.flagBitshiftOffset 0x080054f8   Data           8  stm32f4xx_hal_dma.o(.rodata.DMA_CalcBaseAndBitshift.flagBitshiftOffset)
+    [Anonymous Symbol]                       0x080054f8   Section        0  stm32f4xx_hal_dma.o(.rodata.DMA_CalcBaseAndBitshift.flagBitshiftOffset)
     .bss                                     0x20000010   Section       96  libspace.o(.bss)
     Heap_Mem                                 0x20000288   Data        2048  startup_stm32f405xx.o(HEAP)
     HEAP                                     0x20000288   Section     2048  startup_stm32f405xx.o(HEAP)
@@ -2659,12 +2659,12 @@ Image Symbol Table
     UsageFault_Handler                       0x080052e5   Thumb Code     4  stm32f4xx_it.o(.text.UsageFault_Handler)
     led_init                                 0x080053a9   Thumb Code    36  led.o(.text.led_init)
     led_water                                0x080053cd   Thumb Code    88  led.o(.text.led_water)
-    main                                     0x08005425   Thumb Code   160  main.o(.text.main)
-    _fp_init                                 0x080054c5   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x080054dd   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x080054dd   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    AHBPrescTable                            0x080054de   Data          16  system_stm32f4xx.o(.rodata.AHBPrescTable)
-    APBPrescTable                            0x080054ee   Data           8  system_stm32f4xx.o(.rodata.APBPrescTable)
+    main                                     0x08005425   Thumb Code   162  main.o(.text.main)
+    _fp_init                                 0x080054c7   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x080054df   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x080054df   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    AHBPrescTable                            0x080054e0   Data          16  system_stm32f4xx.o(.rodata.AHBPrescTable)
+    APBPrescTable                            0x080054f0   Data           8  system_stm32f4xx.o(.rodata.APBPrescTable)
     Region$$Table$$Base                      0x08005500   Number         0  anon$$obj.o(Region$$Table)
     Region$$Table$$Limit                     0x08005520   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f4xx.o(.data.SystemCoreClock)
@@ -2947,12 +2947,11 @@ Memory Map of the image
     0x0800536c   0x0800536c   0x0000003c   Code   RO          845    .text.__NVIC_SetPriorityGrouping  stm32f4xx_hal_cortex.o
     0x080053a8   0x080053a8   0x00000024   Code   RO         1166    .text.led_init      led.o
     0x080053cc   0x080053cc   0x00000058   Code   RO         1168    .text.led_water     led.o
-    0x08005424   0x08005424   0x000000a0   Code   RO           11    .text.main          main.o
-    0x080054c4   0x080054c4   0x0000001a   Code   RO         1345    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x080054de   0x080054de   0x00000010   Data   RO         1145    .rodata.AHBPrescTable  system_stm32f4xx.o
-    0x080054ee   0x080054ee   0x00000008   Data   RO         1146    .rodata.APBPrescTable  system_stm32f4xx.o
-    0x080054f6   0x080054f6   0x00000008   Data   RO          775    .rodata.DMA_CalcBaseAndBitshift.flagBitshiftOffset  stm32f4xx_hal_dma.o
-    0x080054fe   0x080054fe   0x00000002   PAD
+    0x08005424   0x08005424   0x000000a2   Code   RO           11    .text.main          main.o
+    0x080054c6   0x080054c6   0x0000001a   Code   RO         1345    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x080054e0   0x080054e0   0x00000010   Data   RO         1145    .rodata.AHBPrescTable  system_stm32f4xx.o
+    0x080054f0   0x080054f0   0x00000008   Data   RO         1146    .rodata.APBPrescTable  system_stm32f4xx.o
+    0x080054f8   0x080054f8   0x00000008   Data   RO          775    .rodata.DMA_CalcBaseAndBitshift.flagBitshiftOffset  stm32f4xx_hal_dma.o
     0x08005500   0x08005500   0x00000020   Data   RO         1406    Region$$Table       anon$$obj.o
 
 
@@ -3004,7 +3003,7 @@ Image component sizes
        112          0          0          0          3        728   exti_irqhandler.o
        220          0          0          0          0       3897   gpio.o
        124          0          0          0          0       1163   led.o
-       388          0          0          0          0       6100   main.o
+       390          0          0          0          0       6100   main.o
         64         26        392          0       3072        836   startup_stm32f405xx.o
        158          0          0          5          4       7047   stm32f4xx_hal.o
       2568          0          0          0          0      11477   stm32f4xx_hal_can.o
@@ -3024,9 +3023,9 @@ Image component sizes
        448          0          0          0        264       6862   usart.o
 
     ----------------------------------------------------------------------
-     20708         48        458         12       3612     179144   Object Totals
+     20710         48        456         12       3612     179144   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-       102          0          2          3          6          0   (incl. Padding)
+       102          0          0          3          6          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -3077,9 +3076,9 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     21334         64        458         12       3708     179324   Grand Totals
-     21334         64        458         12       3708     179324   ELF Image Totals
-     21334         64        458         12          0          0   ROM Totals
+     21336         64        456         12       3708     179324   Grand Totals
+     21336         64        456         12       3708     179324   ELF Image Totals
+     21336         64        456         12          0          0   ROM Totals
 
 ==============================================================================
 

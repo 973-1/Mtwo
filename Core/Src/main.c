@@ -158,7 +158,7 @@ int main(void)
 
       TxHeader_1.StdId = 0;
       TxHeader_1.ExtId = 0x02010101;
-      TxHeader_1.IDE = CAN_ID_STD;//CAN_ID_EXT
+      TxHeader_1.IDE = CAN_ID_EXT;
       TxHeader_1.DLC = 2;
       TxHeader_1.TransmitGlobalTime = DISABLE;
 
