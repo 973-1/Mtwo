@@ -14,7 +14,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
  if(huart->Instance == USART1)
  {
-    if (rx_buffer[5] == 0XFF)
+    if (rx_buffer[4] == 0XFF)
     {
         for(uint8_t i = 0; i < 5; i++)
         {

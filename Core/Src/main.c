@@ -88,6 +88,7 @@ int main(void)
   /* USER CODE BEGIN Init */
   led_init();
   UART_Start_Receive();
+  Beep_Init();
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -125,23 +126,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    if (BEEP_Trigger != 0)
-    {
-      Beep_Alarm(BEEP_Trigger);
-      BEEP_Trigger = 0;
-
-      CAN_TxHeaderTypeDef TxHeader_1;
-      uint32_t TxMailbox_1;
-      uint8_t TxData_1[2] = {'O','K'};
-
-      TxHeader_1.StdId = 0;
-      TxHeader_1.ExtId = 0x02010101;
-      TxHeader_1.IDE = CAN_ID_EXT;
-      TxHeader_1.DLC = 2;
-      TxHeader_1.TransmitGlobalTime = DISABLE;
-
-      HAL_CAN_AddTxMessage(&hcan1, &TxHeader_1, TxData_1, &TxMailbox_1);
-    }
+    
     if (TxLed)
     {
       led_water();
@@ -214,11 +199,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM1)
   {
-    TIM_PeriodElapsedCallback(*htim);
+    TIM_PeriodElapsedCallback(htim);
   }
   if (htim->Instance == TIM2)
   {
-    TIM_PeriodElapsedCallback_1(*htim);
+    TIM_PeriodElapsedCallback_1(htim);
   }
   /* USER CODE BEGIN Callback 1 */
 

@@ -8,7 +8,7 @@ uint8_t led_bre = 0;
 
 void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {   __HAL_TIM_SET_AUTORELOAD(&htim3, led_T);
-    __HAL_TIM_GENERATE_EVENT(&htim3, TIM_EVENTSOURCE_UPDATE);
+    HAL_TIM_GenerateEvent(&htim3, TIM_EVENTSOURCE_UPDATE);
     if(htim->Instance == TIM3)
     {   if(led_bre){
             if(dir == 1)
