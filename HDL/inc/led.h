@@ -13,5 +13,6 @@
 void led_water(void);
 void led_init(void);
 
+extern uint16_t led_T;
 
 #endif

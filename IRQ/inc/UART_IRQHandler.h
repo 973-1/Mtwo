@@ -6,5 +6,6 @@
 #include "beep.h"
 
 void UART_Start_Receive(void);
+extern uint8_t led_bre;
 
 #endif

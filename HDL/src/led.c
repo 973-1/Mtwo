@@ -1,5 +1,6 @@
 #include "led.h"
 
+uint16_t led_T = 0;
 
 void led_init(void)
 {

@@ -31,4 +31,5 @@ mtwo/can_irqhandler.o: ..\IRQ\src\CAN_IRQHandler.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  ..\Core\Inc\can.h ..\HDL\inc\beep.h ..\Core\Inc\gpio.h
+  ..\Core\Inc\can.h ..\HDL\inc\beep.h ..\Core\Inc\gpio.h \
+  ..\IRQ\inc\UART_IRQHandler.h ..\Core\Inc\usart.h ..\HDL\inc\led.h

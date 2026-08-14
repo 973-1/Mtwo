@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 #include "can.h"
 #include "dma.h"
 #include "tim.h"
@@ -32,6 +33,7 @@
 #include "EXTI_IRQHandler.h"
 #include "UART_IRQHandler.h"
 #include "CAN_IRQHandler.h"
+#include "TIM_IRQHandler_1.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,6 +59,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -105,44 +108,19 @@ int main(void)
   //uint8_t type = 0;
   /* USER CODE END 2 */
 
+  /* Init scheduler */
+  osKernelInitialize();  /* Call init function for freertos objects (in cmsis_os2.c) */
+  MX_FREERTOS_Init();
+
+  /* Start scheduler */
+  osKernelStart();
+
+  /* We should never get here as control is now taken by the scheduler */
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   { 
-    /*if (time_period > 1500)
-    {
-      type = 1;
-      time_period = 0;
-    }
-    else if (time_period > 0)
-    {
-      type = 2;
-      time_period = 0;
-    }
-    switch(type)
-    {
-      case 0:
-        break;
-      case 1:
-        led_bre = 0;
-        BEEP_ON();
-        HAL_Delay(200);
-        BEEP_OFF();
-        type = 3;
-        break;
-      case 2:
-        BEEP_ON();
-        HAL_Delay(200);
-        BEEP_OFF();
-        type = 4;
-        break;
-      case 3:
-        led_water();
-        break;
-      case 4:
-        led_bre = 1;
-        break;
-    }*/
 
     /* USER CODE END WHILE */
 
@@ -236,7 +214,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM1)
   {
-    HAL_IncTick();
+    TIM_PeriodElapsedCallback(*htim);
+  }
+  if (htim->Instance == TIM2)
+  {
+    TIM_PeriodElapsedCallback_1(*htim);
   }
   /* USER CODE BEGIN Callback 1 */
 

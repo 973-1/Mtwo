@@ -77,9 +77,23 @@ void MX_CAN1_Init(void)
   CAN_FilterConfig.FilterMode = CAN_FILTERMODE_IDLIST;
   CAN_FilterConfig.FilterFIFOAssignment = CAN_FILTER_FIFO0;
   CAN_FilterConfig.FilterIdHigh = ((0x01020101 << 3) | 4 )>>16;
-  CAN_FilterConfig.FilterMaskIdHigh = ((0x01020201 << 3) | 4 )>>16;
+  CAN_FilterConfig.FilterMaskIdHigh = ((0x02020000 << 3) | 4 )>>16;
   CAN_FilterConfig.FilterIdLow = ((0x01020101 << 3) | 4) & 0xFFFF;
-  CAN_FilterConfig.FilterMaskIdLow =((0x01020201 << 3) | 4) & 0xFFFF;
+  CAN_FilterConfig.FilterMaskIdLow =((0x02020000 << 3) | 4) & 0xFFFF;
+  if (HAL_CAN_ConfigFilter(&hcan1, &CAN_FilterConfig) != HAL_OK){
+    Error_Handler();
+  }
+
+  CAN_FilterConfig.FilterActivation = ENABLE;
+  CAN_FilterConfig.SlaveStartFilterBank = 14;
+  CAN_FilterConfig.FilterBank = 0;
+  CAN_FilterConfig.FilterScale = CAN_FILTERSCALE_16BIT;
+  CAN_FilterConfig.FilterMode = CAN_FILTERMODE_IDLIST;
+  CAN_FilterConfig.FilterFIFOAssignment = CAN_FILTER_FIFO0;
+  CAN_FilterConfig.FilterIdHigh = (0x012 << 5);
+  CAN_FilterConfig.FilterMaskIdHigh = (0x013 << 5);
+  CAN_FilterConfig.FilterIdLow = (0x014 << 5);
+  CAN_FilterConfig.FilterMaskIdLow = (0x015 << 5);
   if (HAL_CAN_ConfigFilter(&hcan1, &CAN_FilterConfig) != HAL_OK){
     Error_Handler();
   }
