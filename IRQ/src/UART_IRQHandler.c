@@ -41,7 +41,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef*huart, uint16_t Size)
                     BEEP_Trigger++;
                 }
             }
-            HAL_UART_Transmit(&huart1,rx_buffer,Size, 100);
+
         }
         HAL_UARTEx_ReceiveToIdle_DMA(&huart1, rx_buffer,sizeof(rx_buffer));
     }
