@@ -1,4 +1,5 @@
-mtwo/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
+mtwo/noisy.o: ..\IRQ\src\NOISY.c ..\IRQ\inc\NOISY.h \
+  ..\IRQ\inc\EXTI_IRQHandler.h ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\Core\Inc\stm32f4xx_hal_conf.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
@@ -30,20 +31,5 @@ mtwo/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h \
-  ..\Core\Inc\FreeRTOSConfig.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F\portmacro.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.h \
-  ..\Core\Inc\can.h ..\Core\Inc\dma.h ..\Core\Inc\tim.h \
-  ..\Core\Inc\usart.h ..\Core\Inc\gpio.h ..\HDL\inc\led.h \
-  ..\HDL\inc\beep.h ..\IRQ\inc\TIM_IRQHandler.h \
-  ..\IRQ\inc\EXTI_IRQHandler.h ..\IRQ\inc\UART_IRQHandler.h \
-  ..\IRQ\inc\CAN_IRQHandler.h ..\IRQ\inc\TIM_IRQHandler_1.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h ..\IRQ\inc\NOISY.h
+  ..\Core\Inc\can.h ..\HDL\inc\beep.h ..\Core\Inc\gpio.h \
+  ..\IRQ\inc\UART_IRQHandler.h ..\Core\Inc\usart.h ..\HDL\inc\led.h

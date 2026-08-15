@@ -28,7 +28,7 @@ void HAL_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
             else if(RxHeader.ExtId == 0x02020000)
             {
                 led_bre = RxData[0];
-                led_T = RxData[1];
+                led_T = RxData[1] | ((uint16_t)RxData[2] << 8);
                 // CAN_TxHeaderTypeDef TxHeader_2;
                 // uint32_t TxMailbox_2;
                 // uint8_t TxData_2[1] = {};
@@ -40,10 +40,6 @@ void HAL_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
                 // TxHeader_2.TransmitGlobalTime = DISABLE;
 
                 // HAL_CAN_AddTxMessage(&hcan1, &TxHeader_2, TxData_2, &TxMailbox_2);
-            }
-            else if (RxHeader.StdId == 0x012)
-            {  
-                 
             }
         }  
         else if (hcan->Instance == CAN2)

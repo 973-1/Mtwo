@@ -7,10 +7,12 @@ uint16_t time = 0;
 uint8_t led_bre = 0;
 
 void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{   __HAL_TIM_SET_AUTORELOAD(&htim3, led_T);
-    HAL_TIM_GenerateEvent(&htim3, TIM_EVENTSOURCE_UPDATE);
+{   
     if(htim->Instance == TIM3)
-    {   if(led_bre){
+    {   
+        if(led_bre){
+            __HAL_TIM_SET_AUTORELOAD(&htim3, led_T);
+            HAL_TIM_GenerateEvent(&htim3, TIM_EVENTSOURCE_UPDATE);
             if(dir == 1)
                 {
                     tim_count++;

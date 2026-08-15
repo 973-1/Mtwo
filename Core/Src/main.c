@@ -34,6 +34,7 @@
 #include "UART_IRQHandler.h"
 #include "CAN_IRQHandler.h"
 #include "TIM_IRQHandler_1.h"
+#include "NOISY.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,6 +106,7 @@ int main(void)
   MX_TIM3_Init();
   MX_USART1_UART_Init();
   MX_CAN1_Init();
+  MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
   //uint8_t type = 0;
   /* USER CODE END 2 */
@@ -199,7 +201,18 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-
+  if (htim->Instance == TIM2)
+  {
+    TIM_PeriodElapsedCallback_1(htim);
+  }
+  if (htim->Instance == TIM3)
+  {
+    TIM_PeriodElapsedCallback(htim);
+  }
+  if (htim->Instance == TIM4)
+  {
+    Noisy();
+  }
   /* USER CODE END Callback 1 */
 }
 

@@ -35,6 +35,7 @@
 "mtwo\can_irqhandler.o"
 "mtwo\tim_irqhandler.o"
 "mtwo\tim_irqhandler_1.o"
+"mtwo\noisy.o"
 "mtwo\croutine.o"
 "mtwo\event_groups.o"
 "mtwo\list.o"
