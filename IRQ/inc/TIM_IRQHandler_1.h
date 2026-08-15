@@ -9,6 +9,7 @@
 #include "can.h"
 #include "UART_IRQHandler.h"
 #include <math.h>
+#include "led.h"
 
 void TIM_PeriodElapsedCallback_1(TIM_HandleTypeDef *htim);
 

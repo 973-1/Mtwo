@@ -32,3 +32,11 @@ void BEEP_Task(void *argument)
     }
   }
 }
+
+void LOG_Task(void *argument)
+{
+  for(;;)
+  {
+    
+  }
+}

@@ -127,10 +127,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     
-    if (TxLed)
-    {
-      led_water();
-    }
+    
   }
   /* USER CODE END 3 */
 }
@@ -199,11 +196,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM1)
   {
-    TIM_PeriodElapsedCallback(htim);
-  }
-  if (htim->Instance == TIM2)
-  {
-    TIM_PeriodElapsedCallback_1(htim);
+    HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
 

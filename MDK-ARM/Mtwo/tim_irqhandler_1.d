@@ -33,4 +33,5 @@ mtwo/tim_irqhandler_1.o: ..\IRQ\src\TIM_IRQHandler_1.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   ..\Core\Inc\tim.h ..\IRQ\inc\EXTI_IRQHandler.h ..\Core\Inc\can.h \
   ..\IRQ\inc\UART_IRQHandler.h ..\Core\Inc\usart.h ..\HDL\inc\beep.h \
-  ..\Core\Inc\gpio.h D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h
+  ..\Core\Inc\gpio.h D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
+  ..\HDL\inc\led.h

@@ -28,4 +28,19 @@ void TIM_PeriodElapsedCallback_1(TIM_HandleTypeDef *htim)
     TxHeader_3.TransmitGlobalTime = DISABLE;
 
     HAL_CAN_AddTxMessage(&hcan1, &TxHeader_3, TxData_3, &TxMailbox_3);
+
+    CAN_TxHeaderTypeDef TxHeader;
+    uint32_t TxMailbox;
+    uint8_t TxData[3];
+    TxData[0] = led_bre;
+    TxData[1] = (uint8_t)(led_T & 0xFF);
+    TxData[2] = (uint8_t)((led_T >> 8) & 0xFF);
+
+    TxHeader.StdId = 0;
+    TxHeader.ExtId = 0x02010101;
+    TxHeader.IDE = CAN_ID_EXT;
+    TxHeader.DLC = 8;
+    TxHeader.TransmitGlobalTime = DISABLE;
+
+    HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox);
 }
