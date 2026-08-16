@@ -46,6 +46,7 @@
 "mtwo\cmsis_os2.o"
 "mtwo\heap_4.o"
 "mtwo\port.o"
+"mtwo\myostask.o"
 --strict --scatter "Mtwo\Mtwo.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

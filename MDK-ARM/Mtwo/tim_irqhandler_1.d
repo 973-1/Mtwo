@@ -7,14 +7,14 @@ mtwo/tim_irqhandler_1.o: ..\IRQ\src\TIM_IRQHandler_1.c \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f405xx.h \
   ..\Drivers\CMSIS\Include\core_cm4.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\keil5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\Drivers\CMSIS\Include\cmsis_version.h \
   ..\Drivers\CMSIS\Include\cmsis_compiler.h \
   ..\Drivers\CMSIS\Include\cmsis_armclang.h \
   ..\Drivers\CMSIS\Include\mpu_armv7.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  D:\keil5\ARM\ARMCLANG\Bin\..\include\stddef.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h \
@@ -33,5 +33,5 @@ mtwo/tim_irqhandler_1.o: ..\IRQ\src\TIM_IRQHandler_1.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   ..\Core\Inc\tim.h ..\IRQ\inc\EXTI_IRQHandler.h ..\Core\Inc\can.h \
   ..\IRQ\inc\UART_IRQHandler.h ..\Core\Inc\usart.h ..\HDL\inc\beep.h \
-  ..\Core\Inc\gpio.h D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
+  ..\Core\Inc\gpio.h D:\keil5\ARM\ARMCLANG\Bin\..\include\math.h \
   ..\HDL\inc\led.h

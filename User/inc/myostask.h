@@ -5,8 +5,9 @@
 #include "task.h"
 #include "main.h"
 #include "cmsis_os.h"
+#include "led.h"
+#include "beep.h"
 
-void LED_Task(void *argument);
-void BEEP_Task(void *argument);
 
 #endif
+

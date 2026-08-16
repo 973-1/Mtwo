@@ -5,6 +5,6 @@
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
 
-extern uint8_t time_period;
+extern uint32_t time_period;
 
 #endif

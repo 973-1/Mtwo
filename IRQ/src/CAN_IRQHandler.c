@@ -4,7 +4,7 @@ CAN_RxHeaderTypeDef RxHeader;
 uint8_t RxData[5];
 uint8_t TxLed = 0;
 
-void HAL_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
     if (hcan ->Instance == CAN1)
     {
@@ -28,7 +28,7 @@ void HAL_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
             else if(RxHeader.ExtId == 0x02020000)
             {
                 led_bre = RxData[0];
-                led_T = RxData[1] | ((uint16_t)RxData[2] << 8);
+                led_T = ((uint16_t)RxData[1] << 8) | RxData[2];
                 // CAN_TxHeaderTypeDef TxHeader_2;
                 // uint32_t TxMailbox_2;
                 // uint8_t TxData_2[1] = {};

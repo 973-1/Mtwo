@@ -30,6 +30,7 @@ void BEEP_Task(void *argument)
     }
       BEEP_Trigger = 0;
     }
+    osDelay(10);
   }
 }
 
