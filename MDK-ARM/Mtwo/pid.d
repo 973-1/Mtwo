@@ -1,5 +1,4 @@
-mtwo/tim_irqhandler.o: ..\IRQ\src\TIM_IRQHandler.c \
-  ..\IRQ\inc\TIM_IRQHandler.h ..\Core\Inc\main.h \
+mtwo/pid.o: ..\User_1\src\PID.c ..\User_1\inc\PID.h ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\Core\Inc\stm32f4xx_hal_conf.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
@@ -30,8 +29,4 @@ mtwo/tim_irqhandler.o: ..\IRQ\src\TIM_IRQHandler.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  ..\Core\Inc\tim.h ..\IRQ\inc\EXTI_IRQHandler.h ..\User_1\inc\DJMotor.h \
-  ..\User_1\inc\PID.h ..\User_1\inc\DJ_Angle.h \
-  ..\IRQ\inc\CAN_IRQHandler.h ..\Core\Inc\can.h ..\HDL\inc\beep.h \
-  ..\Core\Inc\gpio.h D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h

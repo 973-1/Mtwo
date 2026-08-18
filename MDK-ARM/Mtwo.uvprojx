@@ -17,6 +17,8 @@
         <TargetCommonOption>
           <Device>STM32F405RGTx</Device>
           <Vendor>STMicroelectronics</Vendor>
+          <PackID>Keil.STM32F4xx_DFP.3.1.1</PackID>
+          <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000-0x2001BFFF) IRAM2(0x2001C000-0x2001FFFF) IROM(0x8000000-0x80FFFFF) CLOCK(25000000) FPU2 CPUTYPE("Cortex-M4") TZ</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
@@ -32,7 +34,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile></SFDFile>
+          <SFDFile>$$Device:STM32F405RGTx$CMSIS\SVD\STM32F405.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -339,7 +341,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F405xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../HDL/inc;../IRQ/inc</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../HDL/inc;../IRQ/inc;..\User_1\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -883,6 +885,26 @@
               <FileName>TIM_IRQHandler.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\IRQ\src\TIM_IRQHandler.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>User_1</GroupName>
+          <Files>
+            <File>
+              <FileName>DJMotor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User_1\src\DJMotor.c</FilePath>
+            </File>
+            <File>
+              <FileName>DJ_Angle.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User_1\src\DJ_Angle.c</FilePath>
+            </File>
+            <File>
+              <FileName>PID.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User_1\src\PID.c</FilePath>
             </File>
           </Files>
         </Group>

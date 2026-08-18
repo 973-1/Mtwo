@@ -21,18 +21,253 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.56.1.0
  
 <h2>Project:</h2>
-C:\Users\HP\Downloads\STM32ѧϰ\Mtwo\MDK-ARM\Mtwo.uvprojx
-Project File Date:  08/13/2026
+C:\Users\HP\Downloads\STM32study\Mtwo (2)\Mtwo\Mtwo\MDK-ARM\Mtwo.uvprojx
+Project File Date:  08/18/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.18', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Mtwo'
-compiling main.c...
+../User_1/src/DJ_Angle.c(1): warning: In file included from...
+../User_1/inc/DJ_Angle.h(5): warning: In file included from...
+../User_1/inc/DJMotor.h(104): error: expected ';' at end of declaration list
+    uint32_t BitRataaSwitch
+                           ^
+                           ;
+../User_1/inc/DJMotor.h(116): error: unknown type name 'DJmotorPID'; did you mean 'DJmotorVal'?
+    void DJmotor_PID_Reload(DJMotorPointer motor,DJmotorPID pid_reload);
+                                                 ^~~~~~~~~~
+                                                 DJmotorVal
+../User_1/inc/DJMotor.h(36): note: 'DJmotorVal' declared here
+} DJmotorVal;
+  ^
+../User_1/inc/DJMotor.h(1): error: unterminated conditional directive
+#ifndef DJMOTOR_H
+ ^
+../User_1/src/DJ_Angle.c(5): error: no member named 'PulseReader' in 'DJmotorVal'; did you mean 'PulseRead'?
+    motor->valNow.PulseGap = (int16_t)(motor->valNow.PulseRead - motor->valPre.PulseReader);
+                                                                               ^~~~~~~~~~~
+                                                                               PulseRead
+../User_1/inc/DJMotor.h(32): note: 'PulseRead' declared here
+    volatile int16_t PulseRead;
+                     ^
+../User_1/src/DJ_Angle.c(7): warning: implicit declaration of function 'ABS' is invalid in C99 [-Wimplicit-function-declaration]
+    if (ABS(motor->valNow.PulseGap) > 4096)
+        ^
+../User_1/src/DJ_Angle.c(27): error: no member named 'IsSeZero' in 'DJmotorStatus'; did you mean 'IsSetZero'?
+        motor->statusFlag.IsSeZero = false;
+                          ^~~~~~~~
+                          IsSetZero
+../User_1/inc/DJMotor.h(64): note: 'IsSetZero' declared here
+    bool IsSetZero;
+         ^
+1 warning and 5 errors generated.
+compiling DJ_Angle.c...
+../IRQ/src/CAN_IRQHandler.c(16): warning: implicit declaration of function 'DJmotor_Receive' is invalid in C99 [-Wimplicit-function-declaration]
+            {   DJmotor_Receive(RxHeader, *Rx_data)
+                ^
+../IRQ/src/CAN_IRQHandler.c(16): error: expected ';' after expression
+            {   DJmotor_Receive(RxHeader, *Rx_data)
+                                                   ^
+                                                   ;
+1 warning and 1 error generated.
 compiling CAN_IRQHandler.c...
-linking...
-Program Size: Code=21336 RO-data=456 RW-data=12 ZI-data=3708  
-FromELF: creating hex file...
-"Mtwo\Mtwo.axf" - 0 Error(s), 0 Warning(s).
+../User_1/src/PID.c(20): warning: implicit declaration of function 'ABS' is invalid in C99 [-Wimplicit-function-declaration]
+            if (ABS(pid->err[2]) > 100.0f)
+                ^
+../User_1/src/PID.c(35): error: conflicting types for 'PID_Init'
+void PID_Init(PIDType *pid_change, float kp, float ki, float kd,uint8_t mode_change)
+     ^
+../User_1/inc\PID.h(22): note: previous declaration is here
+void PID_Init(PIDType pid_change, float kp, float ki, float kd,uint8_t mode_change);
+     ^
+1 warning and 1 error generated.
+compiling PID.c...
+../User_1/src/DJMotor.c(1): warning: In file included from...
+../User_1/inc/DJMotor.h(6): warning: In file included from...
+../User_1/inc/DJ_Angle.h(5): warning: In file included from...
+../User_1/inc/DJMotor.h(1): error: unterminated conditional directive
+#ifndef DJMOTOR_H
+ ^
+../User_1/src/DJMotor.c(1): warning: In file included from...
+../User_1/inc/DJMotor.h(6): warning: In file included from...
+../User_1/inc/DJ_Angle.h(8): error: unknown type name 'DJMotorPointer'
+void DJmotor_AngleCalculate(DJMotorPointer motor);
+                            ^
+../User_1/src/DJMotor.c(1): warning: In file included from...
+../User_1/inc/DJMotor.h(104): error: expected ';' at end of declaration list
+    uint32_t BitRataaSwitch
+                           ^
+                           ;
+../User_1/inc/DJMotor.h(116): error: unknown type name 'DJmotorPID'; did you mean 'DJmotorVal'?
+    void DJmotor_PID_Reload(DJMotorPointer motor,DJmotorPID pid_reload);
+                                                 ^~~~~~~~~~
+                                                 DJmotorVal
+../User_1/inc/DJMotor.h(36): note: 'DJmotorVal' declared here
+} DJmotorVal;
+  ^
+../User_1/inc/DJMotor.h(1): error: unterminated conditional directive
+#ifndef DJMOTOR_H
+ ^
+../User_1/src/DJMotor.c(14): error: use of undeclared identifier 'M2006_RATIO'
+    dj2006_param.Reduction_ratio = M2006_RATIO;
+                                   ^
+../User_1/src/DJMotor.c(18): error: use of undeclared identifier 'dj3500_param'; did you mean 'dj3508_param'?
+    dj3500_param.ParamID = 0x200U;
+    ^~~~~~~~~~~~
+    dj3508_param
+../User_1/src/DJMotor.c(6): note: 'dj3508_param' declared here
+    DJmotorParam dj3508_param;
+                 ^
+../User_1/src/DJMotor.c(19): error: use of undeclared identifier 'dj3500_param'; did you mean 'dj3508_param'?
+    dj3500_param.Gear_ratio = 1.0f;
+    ^~~~~~~~~~~~
+    dj3508_param
+../User_1/src/DJMotor.c(6): note: 'dj3508_param' declared here
+    DJmotorParam dj3508_param;
+                 ^
+../User_1/src/DJMotor.c(20): error: use of undeclared identifier 'dj3500_param'; did you mean 'dj3508_param'?
+    dj3500_param.Reduction_ratio = M3508_RATIO;
+    ^~~~~~~~~~~~
+    dj3508_param
+../User_1/src/DJMotor.c(6): note: 'dj3508_param' declared here
+    DJmotorParam dj3508_param;
+                 ^
+../User_1/src/DJMotor.c(20): error: use of undeclared identifier 'M3508_RATIO'
+    dj3500_param.Reduction_ratio = M3508_RATIO;
+                                   ^
+../User_1/src/DJMotor.c(21): error: use of undeclared identifier 'dj3500_param'; did you mean 'dj3508_param'?
+    dj3500_param.PulsePerRound = 8191U;
+    ^~~~~~~~~~~~
+    dj3508_param
+../User_1/src/DJMotor.c(6): note: 'dj3508_param' declared here
+    DJmotorParam dj3508_param;
+                 ^
+../User_1/src/DJMotor.c(22): error: use of undeclared identifier 'dj3500_param'; did you mean 'dj3508_param'?
+    dj3500_param.CurrentLimit_raw = 10000;
+    ^~~~~~~~~~~~
+    dj3508_param
+../User_1/src/DJMotor.c(6): note: 'dj3508_param' declared here
+    DJmotorParam dj3508_param;
+                 ^
+../User_1/src/DJMotor.c(29): error: no member named 'PosAngleLimitFlag' in 'DJmotorLimit'; did you mean 'PosANgleLimitFlag'?
+    limit.PosAngleLimitFlag = false;
+          ^~~~~~~~~~~~~~~~~
+          PosANgleLimitFlag
+../User_1/inc/DJMotor.h(50): note: 'PosANgleLimitFlag' declared here
+    bool PosANgleLimitFlag;
+         ^
+../User_1/src/DJMotor.c(33): error: no member named 'RPMLimitFlag' in 'DJmotorLimit'; did you mean 'RPMLimitFlaag'?
+    limit.RPMLimitFlag = false;
+          ^~~~~~~~~~~~
+          RPMLimitFlaag
+../User_1/inc/DJMotor.h(49): note: 'RPMLimitFlaag' declared here
+    bool RPMLimitFlaag;
+         ^
+../User_1/src/DJMotor.c(76): error: passing 'PIDType *' to parameter of incompatible type 'PIDType'; remove &
+        PID_Init(&DJmotor[i].posPID, 0.07f, 0.0005f, 0.0f, PIDPOS);
+                 ^~~~~~~~~~~~~~~~~~
+../User_1/inc/PID.h(22): note: passing argument to parameter 'pid_change' here
+void PID_Init(PIDType pid_change, float kp, float ki, float kd,uint8_t mode_change);
+                      ^
+../User_1/src/DJMotor.c(77): error: passing 'PIDType *' to parameter of incompatible type 'PIDType'; remove &
+        PID_Init(&DJmotor[i].velPID, 5.5f, 0.3f, 0.01f, PIDINC);
+                 ^~~~~~~~~~~~~~~~~~
+../User_1/inc/PID.h(22): note: passing argument to parameter 'pid_change' here
+void PID_Init(PIDType pid_change, float kp, float ki, float kd,uint8_t mode_change);
+                      ^
+../User_1/src/DJMotor.c(81): error: conflicting types for 'DJmotor_Receive'
+void DJmotor_Receive(CAN_RxHeaderTypeDef RxHeader, uint8_t *Rx_data)
+     ^
+../User_1/inc/DJMotor.h(115): note: previous declaration is here
+    void DJmotor_Receive(uint8_t *Rx_data);
+         ^
+../User_1/src/DJMotor.c(83): error: use of undeclared identifier 'Rxheader'
+    uint8_t card_id = (uint8_t)(Rxheader.Identifier - 0x200U);
+                                ^
+../User_1/src/DJMotor.c(91): error: use of undeclared identifier 'M3508_RATIO'
+    if (motor->param.Reduction_ratio == M3508_RATIO)
+                                        ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+compiling DJMotor.c...
+../Core/Src/main.c(31): warning: In file included from...
+../IRQ/inc\TIM_IRQHandler.h(7): warning: In file included from...
+../User_1/inc/DJMotor.h(6): warning: In file included from...
+../User_1/inc/DJ_Angle.h(5): warning: In file included from...
+../User_1/inc/DJMotor.h(1): error: unterminated conditional directive
+#ifndef DJMOTOR_H
+ ^
+../Core/Src/main.c(31): warning: In file included from...
+../IRQ/inc\TIM_IRQHandler.h(7): warning: In file included from...
+../User_1/inc/DJMotor.h(6): warning: In file included from...
+../User_1/inc/DJ_Angle.h(8): error: unknown type name 'DJMotorPointer'
+void DJmotor_AngleCalculate(DJMotorPointer motor);
+                            ^
+../Core/Src/main.c(31): warning: In file included from...
+../IRQ/inc\TIM_IRQHandler.h(7): warning: In file included from...
+../User_1/inc/DJMotor.h(104): error: expected ';' at end of declaration list
+    uint32_t BitRataaSwitch
+                           ^
+                           ;
+../User_1/inc/DJMotor.h(116): error: unknown type name 'DJmotorPID'; did you mean 'DJmotorVal'?
+    void DJmotor_PID_Reload(DJMotorPointer motor,DJmotorPID pid_reload);
+                                                 ^~~~~~~~~~
+                                                 DJmotorVal
+../User_1/inc/DJMotor.h(36): note: 'DJmotorVal' declared here
+} DJmotorVal;
+  ^
+../User_1/inc/DJMotor.h(1): error: unterminated conditional directive
+#ifndef DJMOTOR_H
+ ^
+../Core/Src/main.c(126): error: function definition is not allowed here
+{
+^
+../Core/Src/main.c(179): error: function definition is not allowed here
+{
+^
+../Core/Src/main.c(197): error: function definition is not allowed here
+{
+^
+../Core/Src/main.c(221): error: expected '}'
+#endif /* USE_FULL_ASSERT */
+                            ^
+../Core/Src/main.c(74): note: to match this '{'
+{
+^
+9 errors generated.
+compiling main.c...
+../IRQ/src/TIM_IRQHandler.c(1): warning: In file included from...
+../IRQ/inc\TIM_IRQHandler.h(7): warning: In file included from...
+../User_1/inc/DJMotor.h(6): warning: In file included from...
+../User_1/inc/DJ_Angle.h(5): warning: In file included from...
+../User_1/inc/DJMotor.h(1): error: unterminated conditional directive
+#ifndef DJMOTOR_H
+ ^
+../IRQ/src/TIM_IRQHandler.c(1): warning: In file included from...
+../IRQ/inc\TIM_IRQHandler.h(7): warning: In file included from...
+../User_1/inc/DJMotor.h(6): warning: In file included from...
+../User_1/inc/DJ_Angle.h(8): error: unknown type name 'DJMotorPointer'
+void DJmotor_AngleCalculate(DJMotorPointer motor);
+                            ^
+../IRQ/src/TIM_IRQHandler.c(1): warning: In file included from...
+../IRQ/inc\TIM_IRQHandler.h(7): warning: In file included from...
+../User_1/inc/DJMotor.h(104): error: expected ';' at end of declaration list
+    uint32_t BitRataaSwitch
+                           ^
+                           ;
+../User_1/inc/DJMotor.h(116): error: unknown type name 'DJmotorPID'; did you mean 'DJmotorVal'?
+    void DJmotor_PID_Reload(DJMotorPointer motor,DJmotorPID pid_reload);
+                                                 ^~~~~~~~~~
+                                                 DJmotorVal
+../User_1/inc/DJMotor.h(36): note: 'DJmotorVal' declared here
+} DJmotorVal;
+  ^
+../User_1/inc/DJMotor.h(1): error: unterminated conditional directive
+#ifndef DJMOTOR_H
+ ^
+5 errors generated.
+compiling TIM_IRQHandler.c...
+"Mtwo\Mtwo.axf" - 40 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -42,6 +277,11 @@ Package Vendor: ARM
                 CMSIS (Common Microcontroller Software Interface Standard)
    * Component: CORE Version: 5.6.0
 
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.3.1.1.pack
+                Keil.STM32F4xx_DFP.3.1.1
+                STMicroelectronics STM32F4 Series Device Support
+
 <h2>Collection of Component include folders:</h2>
   ./RTE/_Mtwo
   D:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
@@ -50,6 +290,7 @@ Package Vendor: ARM
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
+Target not created.
 Build Time Elapsed:  00:00:02
 </pre>
 </body>

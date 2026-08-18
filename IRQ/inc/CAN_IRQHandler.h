@@ -7,5 +7,7 @@
 #include "beep.h"
 
 extern uint8_t TxLed;
+extern uint8_t *Rx_data;
+
 
 #endif
