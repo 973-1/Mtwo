@@ -109,66 +109,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   { 
-    /*if (time_period > 1500)
-    {
-      type = 1;
-      time_period = 0;
-    }
-    else if (time_period > 0)
-    {
-      type = 2;
-      time_period = 0;
-    }
-    switch(type)
-    {
-      case 0:
-        break;
-      case 1:
-        led_bre = 0;
-        BEEP_ON();
-        HAL_Delay(200);
-        BEEP_OFF();
-        type = 3;
-        break;
-      case 2:
-        BEEP_ON();
-        HAL_Delay(200);
-        BEEP_OFF();
-        type = 4;
-        break;
-      case 3:
-        led_water();
-        break;
-      case 4:
-        led_bre = 1;
-        break;
-    }*/
+    
 
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    if (BEEP_Trigger != 0)
-    {
-      Beep_Alarm(BEEP_Trigger);
-      BEEP_Trigger = 0;
-
-      CAN_TxHeaderTypeDef TxHeader_1;
-      uint32_t TxMailbox_1;
-      uint8_t TxData_1[2] = {'O','K'};
-
-      TxHeader_1.StdId = 0;
-      TxHeader_1.ExtId = 0x02010101;
-      TxHeader_1.IDE = CAN_ID_EXT;
-      TxHeader_1.DLC = 2;
-      TxHeader_1.TransmitGlobalTime = DISABLE;
-
-      HAL_CAN_AddTxMessage(&hcan1, &TxHeader_1, TxData_1, &TxMailbox_1);
-    }
-    if (TxLed)
-    {
-      led_water();
-    }
-  }
+    
   /* USER CODE END 3 */
 }
 
