@@ -5,6 +5,7 @@ uint16_t tim_count = 0;
 static uint8_t dir = 1;
 uint16_t time = 0;
 uint8_t led_bre = 0;
+uint8_t now = 1;
 
 void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {

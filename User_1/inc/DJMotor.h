@@ -7,10 +7,10 @@
 #include <stdbool.h>
 
 #define USE_DJNUM  4
-#define M2006_NUM  2
-#define M3508_NUM  2
+#define M2006_NUM  4
+#define M3508_NUM  0
 #define USE_DJ     1
-#define FDCAN_STANDARD_ID  0x02020202
+#define FDCAN_STANDARD_ID  0x00000000
 #define FDCAN_DLC_BYTES_8  0X00000008
 #define ABS(x) ((x)<0 ? -(x):(x))
 
@@ -93,7 +93,7 @@ typedef struct
     PIDType velPID;
 }DJMotor,*DJMotorPointer;
 
-
+/*
 typedef struct 
 {
     uint8_t Identifier;
@@ -106,7 +106,7 @@ typedef struct
     uint32_t TxEventFiControl;
     uint32_t MessageMarker;
 }FDCAN_TxHeaderTypeDef;
-
+*/
 #if USE_DJ
     extern DJMotor DJmotor[USE_DJNUM];
 

@@ -72,7 +72,7 @@ void MX_CAN1_Init(void)
 
   CAN_FilterConfig.FilterActivation = ENABLE;
   CAN_FilterConfig.SlaveStartFilterBank = 14;
-  CAN_FilterConfig.FilterBank = 0;
+  CAN_FilterConfig.FilterBank = 1;
   CAN_FilterConfig.FilterScale = CAN_FILTERSCALE_32BIT;
   CAN_FilterConfig.FilterMode = CAN_FILTERMODE_IDLIST;
   CAN_FilterConfig.FilterFIFOAssignment = CAN_FILTER_FIFO0;

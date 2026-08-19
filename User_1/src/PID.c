@@ -6,6 +6,8 @@ int GetSign(float x){
 
 float PID_Caculate(PIDType *pid)
 {
+    pid->err[0] = pid->SetVal - pid->CurVal;
+
     switch (pid->mode)
     {
         case PIDINC:
@@ -42,8 +44,8 @@ void PID_Init(PIDType *pid_change, float kp, float ki, float kd,uint8_t mode_cha
 
 void PID_Reset(PIDType *pid_change)
 {
-    pid_change->KP = 0.0f;
-    pid_change->KI = 0.0f;
-    pid_change->KD = 0.0f;
-    pid_change->mode = 0;
+    pid_change->err[0] = 0.0f;
+    pid_change->err[1] = 0.0f;
+    pid_change->err[2] = 0.0f;
+    pid_change->output = 0.0f;
 }

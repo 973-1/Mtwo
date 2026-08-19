@@ -121,9 +121,10 @@ void DJmotor_Receive(CAN_RxHeaderTypeDef RxHeader, uint8_t *Rx_data)
 
     DJMotorPointer motor = &DJmotor[card_id - 1U];
 
-    motor->valNow.PulseRead = (int16_t)(((uint16_t)Rx_data[0] << 8 | Rx_data[1]));
-    motor->valNow.speed_rpm = (int16_t)(((uint16_t)Rx_data[1] << 8 | Rx_data[2]));
-    motor->valNow.current_raw = (int16_t)(((uint16_t)Rx_data[3] << 8 | Rx_data[4]));
+    motor->valNow.PulseRead = (int16_t)(((uint16_t)Rx_data[0] << 8) | Rx_data[1]);
+    motor->valNow.speed_rpm = (int16_t)(((uint16_t)Rx_data[2] << 8) | Rx_data[3]);
+    motor->valNow.current_raw = (int16_t)(((uint16_t)Rx_data[4] << 8) | Rx_data[5]);
+    
 
     if (motor->param.Reduction_ratio == M3508_RATIO)
     {
@@ -170,20 +171,20 @@ static void DJmotor_SwitchMode(DJMotorPointer motor)
 void DJmotor_CurrentTransmit(DJMotorPointer motor)
 {
     static uint8_t tx_data[8] = {0};
-    FDCAN_TxHeaderTypeDef tx_header = {0};
+    CAN_TxHeaderTypeDef tx_header = {0};
     uint8_t tag = 0;
 
-    tx_header.IdType = FDCAN_STANDARD_ID;
-    tx_header.DataLength = FDCAN_DLC_BYTES_8;
+    tx_header.IDE = FDCAN_STANDARD_ID;
+    tx_header.DLC = FDCAN_DLC_BYTES_8;
 
     if (motor->ID <= 4U)
     {
-        tx_header.Identifier = 0x200U;
+        tx_header.StdId = 0x200U;
         tag = (uint8_t)((motor->ID - 1U) * 2U);
     }
     else
     {
-        tx_header.Identifier = 0x1FFU;
+        tx_header.StdId = 0x1FFU;
         tag = (uint8_t)(motor->ID - 5U * 2U);
     }
 
@@ -284,10 +285,11 @@ int32_t Clamp(int32_t value, int32_t min, int32_t max)
     {
         return min;
     }
-    if (value < max)
+    if (value > max)
     {
         return max;
     }
+    return value;
 }
 
 void DJmotor_Func(void)

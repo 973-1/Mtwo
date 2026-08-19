@@ -2,18 +2,18 @@
 
 CAN_RxHeaderTypeDef RxHeader;
 CAN_TxHeaderTypeDef tx_header;
-uint8_t RxData[10];
+uint8_t RxData[8];
 uint8_t TxLed = 0;
 uint8_t *Rx_data = RxData;
 
-void HAL_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
     if (hcan ->Instance == CAN1)
     {
         if(HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0,&RxHeader, RxData) == HAL_OK)
         {
             if (RxHeader.StdId == 0x201)
-            {   DJmotor_Receive(RxHeader, *Rx_data);
+            {   DJmotor_Receive(RxHeader, RxData);
                 //BEEP_Trigger ++;
             //     CAN_TxHeaderTypeDef TxHeader;
             //     uint32_t TxMailbox;
