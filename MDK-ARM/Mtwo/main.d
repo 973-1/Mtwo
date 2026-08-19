@@ -34,7 +34,6 @@ mtwo/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Core\Inc\usart.h ..\Core\Inc\gpio.h ..\HDL\inc\led.h \
   ..\HDL\inc\beep.h ..\IRQ\inc\TIM_IRQHandler.h \
   ..\IRQ\inc\EXTI_IRQHandler.h ..\User_1\inc\DJMotor.h \
-  ..\User_1\inc\PID.h ..\User_1\inc\DJ_Angle.h \
-  ..\IRQ\inc\CAN_IRQHandler.h \
+  ..\User_1\inc\PID.h ..\IRQ\inc\CAN_IRQHandler.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
   ..\IRQ\inc\UART_IRQHandler.h

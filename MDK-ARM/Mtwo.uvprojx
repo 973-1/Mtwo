@@ -341,7 +341,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F405xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../HDL/inc;../IRQ/inc;..\User_1\inc</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../HDL/inc;../IRQ/inc;../User_1/inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -895,11 +895,6 @@
               <FileName>DJMotor.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User_1\src\DJMotor.c</FilePath>
-            </File>
-            <File>
-              <FileName>DJ_Angle.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User_1\src\DJ_Angle.c</FilePath>
             </File>
             <File>
               <FileName>PID.c</FileName>

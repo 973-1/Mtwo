@@ -3,7 +3,6 @@
 
 #include "main.h"
 #include "PID.h"
-#include "DJ_Angle.h"
 #include "CAN_IRQHandler.h"
 #include <stdbool.h>
 
@@ -13,6 +12,7 @@
 #define USE_DJ     1
 #define FDCAN_STANDARD_ID  0x02020202
 #define FDCAN_DLC_BYTES_8  0X00000008
+#define ABS(x) ((x)<0 ? -(x):(x))
 
 typedef enum
 {
@@ -46,8 +46,8 @@ typedef struct
 
 typedef struct 
 {
-    bool RPMLimitFlaag;
-    bool PosANgleLimitFlag;
+    bool RPMLimitFlag;
+    bool PosAngleLimitFlag;
     bool PosRPMFlag;
     bool CurrentLimitFlag;
     float MaxAngle_deg;
@@ -101,7 +101,7 @@ typedef struct
     uint32_t TxFrameType;
     uint32_t DataLength;
     uint32_t ErrorStateIndicator;
-    uint32_t BitRataaSwitch
+    uint32_t BitRataaSwitch;
     uint32_t FDFormat;
     uint32_t TxEventFiControl;
     uint32_t MessageMarker;
@@ -111,14 +111,17 @@ typedef struct
     extern DJMotor DJmotor[USE_DJNUM];
 
     void DJmotor_Init(void);
+    void DJmotor_AngleCalculate(DJMotorPointer motor);
     void DJmotor_Func(void);
-    void DJmotor_Receive(uint8_t *Rx_data);
-    void DJmotor_PID_Reload(DJMotorPointer motor,DJmotorPID pid_reload);
+    void DJmotor_Receive(CAN_RxHeaderTypeDef RxHeader, uint8_t *Rx_data);
+    //void DJmotor_PID_Reload(DJMotorPointer motor,DJmotorPID pid_reload);
     void DJmotor_SetZero(DJMotorPointer motor);
+    int16_t ClampPeak(int16_t current_raw, int16_t CurrentLimit_raw);
 
     void DJmotor_CurrentTransmit(DJMotorPointer motor);
     void DJmotor_SpeedMode(DJMotorPointer motor);
     void DJmotor_PositionMode(DJMotorPointer motor);
     void DJmotor_ZeroMode(DJMotorPointer motor);
 
+#endif
 #endif

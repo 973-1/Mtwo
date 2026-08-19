@@ -85,6 +85,7 @@ int main(void)
   /* USER CODE BEGIN Init */
   led_init();
   UART_Start_Receive();
+  DJmotor_Init();
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -114,7 +115,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    
+  }
   /* USER CODE END 3 */
 }
 
@@ -182,7 +183,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM1)
   {
-    HAL_IncTick();
+    TIM_PeriodElapsedCallback(htim);
   }
   /* USER CODE BEGIN Callback 1 */
 

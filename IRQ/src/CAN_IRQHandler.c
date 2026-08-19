@@ -13,7 +13,7 @@ void HAL_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
         if(HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0,&RxHeader, RxData) == HAL_OK)
         {
             if (RxHeader.StdId == 0x201)
-            {   DJmotor_Receive(RxHeader, *Rx_data)
+            {   DJmotor_Receive(RxHeader, *Rx_data);
                 //BEEP_Trigger ++;
             //     CAN_TxHeaderTypeDef TxHeader;
             //     uint32_t TxMailbox;
